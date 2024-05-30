@@ -59,10 +59,15 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import Button from "../../Button"; // plasmic-import: IQKEQxKKBP4J/component
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic.module.css"; // plasmic-import: qBQYRQFJzZuuq9zzpbMJ27/projectcss
 import sty from "./PlasmicNewPage.module.css"; // plasmic-import: x6wCISTh6sbh/css
+
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: 6Iw-T2d8QN6b/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: hIGxHid4GFVh/icon
 
 createPlasmicElementProxy;
 
@@ -77,6 +82,7 @@ export const PlasmicNewPage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicNewPage__OverridesType = {
   root?: Flex__<"div">;
+  button?: Flex__<typeof Button>;
 };
 
 export interface DefaultNewPageProps {}
@@ -149,20 +155,75 @@ function PlasmicNewPage__RenderFunc(props: {
             projectcss.plasmic_tokens,
             sty.root
           )}
-        />
+        >
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__hawGh
+            )}
+            onClick={async event => {
+              const $steps = {};
+
+              $steps["updateStateVariable"] = true
+                ? (() => {
+                    const actionArgs = {};
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+                      undefined;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateStateVariable"] != null &&
+                typeof $steps["updateStateVariable"] === "object" &&
+                typeof $steps["updateStateVariable"].then === "function"
+              ) {
+                $steps["updateStateVariable"] = await $steps[
+                  "updateStateVariable"
+                ];
+              }
+            }}
+          >
+            {"\u0633\u0644\u0627\u0645 \u062e\u0648\u0628\u06cc"}
+          </div>
+          <Button
+            data-plasmic-name={"button"}
+            data-plasmic-override={overrides.button}
+            className={classNames("__wab_instance", sty.button)}
+            showEndIcon={true}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__mHh9D
+              )}
+            >
+              {
+                "\u0641\u063a\u0639\u063a\u0641\u063a\u0639\u0639\u0641\u0639\u063a\u0641\u0639\u0639\u0641\u063a\u0639\u063a\u0639\u063a\u0639\u063a\u0639\u0641\u063a\u0639\u063a\u0641"
+              }
+            </div>
+          </Button>
+        </div>
       </div>
     </React.Fragment>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root"]
+  root: ["root", "button"],
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  button: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -225,6 +286,7 @@ export const PlasmicNewPage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicNewPage
     internalVariantProps: PlasmicNewPage__VariantProps,

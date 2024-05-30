@@ -55,9 +55,34 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/home-page"
+        },
+        {
+          "id": "IQKEQxKKBP4J",
+          "name": "Button",
+          "type": "managed",
+          "projectId": "qBQYRQFJzZuuq9zzpbMJ27",
+          "renderModuleFilePath": "plasmic/website_starter/PlasmicButton.tsx",
+          "importSpec": {
+            "modulePath": "Button.tsx"
+          },
+          "cssFilePath": "plasmic/website_starter/PlasmicButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "button"
         }
       ],
-      "icons": [],
+      "icons": [
+        {
+          "id": "6Iw-T2d8QN6b",
+          "name": "ChecksvgIcon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Checksvg.tsx"
+        },
+        {
+          "id": "hIGxHid4GFVh",
+          "name": "IconIcon",
+          "moduleFilePath": "plasmic/website_starter/icons/PlasmicIcon__Icon.tsx"
+        }
+      ],
       "images": [],
       "indirect": false,
       "globalContextsFilePath": "",
